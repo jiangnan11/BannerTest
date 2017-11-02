@@ -3,8 +3,10 @@ package com.example.lihao.bannertest;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.List;
 
 //https://github.com/youth5201314/banner
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     private Integer[] images = {R.drawable.p1,R.drawable.p2,R.drawable.p3};
     private String[] pictures = {"asset:///p1.jpg","asset:///p2.jpg","asset:///p3.jpg"};
     private List<String> stringList = new ArrayList<>();
@@ -45,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
 //        localImages1.add(getResId("p3", R.drawable.class));
 //        Banner banner = (Banner) findViewById(R.id.banner);
 //        banner.setImages(localImages).setImageLoader(new GlideImageLoader()).start();
+
+        //设置点击事件
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Log.d(TAG, "OnBannerClick: "+position);
+            }
+        });
 
 
 
