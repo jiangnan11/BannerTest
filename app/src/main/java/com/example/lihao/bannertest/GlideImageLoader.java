@@ -31,8 +31,8 @@ public class GlideImageLoader extends ImageLoader {
 //        com.squareup.picasso:picasso:2.5.2
 
         //用fresco加载图片简单用法，记得要写下面的createImageView方法
-        Uri uri = Uri.parse((String) path);
-        imageView.setImageURI(uri);
+//        Uri uri = Uri.parse((String) path);
+//        imageView.setImageURI(uri);
     }
 
     //提供createImageView 方法，如果不用可以不重写这个方法，主要是方便自定义ImageView的创建
